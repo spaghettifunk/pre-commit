@@ -1,8 +1,8 @@
 # This configuration file allows our pre-commit hooks to be used with pre-commit: http://pre-commit.com/
 
 - id: helm-validate
-  name: Helm server-side dry-run validation  
-  language: system
-  entry: bash hooks/helm-validate.sh
+  name: Helm server-side dry-run validation
+  language: script
+  entry: hooks/helm-validate.sh
   files: ^charts/
   pass_filenames: false
