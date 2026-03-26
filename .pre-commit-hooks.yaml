@@ -2,7 +2,7 @@
 
 - id: helm-validate
   name: Helm server-side dry-run validation  
-  entry: hooks/helm-validate.sh
-  language: script
+  language: system
+  entry: bash hooks/helm-validate.sh
   files: ^charts/
   pass_filenames: false
