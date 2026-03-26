@@ -35,9 +35,9 @@ validate_chart() {
 
   local output
   if ! output=$(helm template "${chart_dir}" \
-      --namespace "${NAMESPACE}" \      # keeps rendering correct
+      --namespace "${NAMESPACE}" \
       ${HELM_ARGS} 2>&1 | \
-      kubectl apply --dry-run=server -f - 2>&1); then  # no --namespace here
+      kubectl apply --dry-run=server -f - 2>&1); then
     echo -e "${RED}✗ Validation failed for ${chart_dir}${NC}"
     echo "${output}"
     return 1
